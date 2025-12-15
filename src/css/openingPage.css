@@ -1,0 +1,37 @@
+.open-screen {
+position: absolute;
+/* top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); */
+}
+.openTextContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 20rem; */
+    margin-top: 5rem;
+    
+}
+.imagesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.openingTitle {
+    font-family: "fredoka";
+    font-size: 2.5rem;
+    width: 20rem;
+    font-weight: 700;
+    color: #804B8B;
+    
+}
+.openingSecTitle {
+    font-family: "fredoka";
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: -2rem;
+    color: #804B8B;
+}
+.openImg {
+    width: 18rem;
+}

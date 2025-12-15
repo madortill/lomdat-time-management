@@ -1,0 +1,58 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  
+  /* background-color: blueviolet; */
+}
+.app {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  direction: rtl;
+  width: 100%;
+  max-width: 430px;
+  height: 91vh;
+  background-color: #E9DDF4;
+  font-family: 'askim';
+  overflow: hidden;
+  position: relative;
+}
+.logoTill {
+  width: 3.5rem;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
+.logos {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 0.51rem;
+  padding-right: 15rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+.logoMifkada {
+  height: 2.8rem;
+}
+.hadrahaLogo {
+  height: 2.8rem;
+}
+.schoolLogo {
+  height: 2.8rem;
+}
+
+@font-face {
+  font-family: "assistant-reg";
+  src: url("../assets/fonts/Assistant-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "assistant-bold";
+  src: url("../assets/fonts/Assistant-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "fredoka";
+  src: url("../assets/fonts/Fredoka-VariableFont_wdth,wght.ttf") format("truetype");
+}
+
