@@ -2,13 +2,15 @@ import React from "react";
 import { useState } from "react";
 import "./css/App.css";
 import OpeningPage from "./components/OpeningPage"; 
+import ImgAndText from "./components/ImgAndText"; 
+import Question from "./components/Question"; 
 import logoTill from "./assets/images/logoTill.svg";
 import logoMifkada from "./assets/images/logoMifkada.png";
 import hadrahaLogo from "./assets/images/hadrahaLogo.png";
 import schoolLogo from "./assets/images/schoolLogo.png";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [page, setPage] = useState(0);
 
   return (
     <>
@@ -19,7 +21,9 @@ function App() {
     <img src={hadrahaLogo} alt="hadrahaLogo"  className="hadrahaLogo" />
     <img src={schoolLogo} alt="schoolLogo"  className="schoolLogo" />
     </div>
-    <OpeningPage/>
+      { page === 0 && <OpeningPage setPage={setPage}/>}
+      { page === 1 && <ImgAndText setPage={setPage}/>}
+      { page === 2 && <Question/> }
   </div>
   </>
   );

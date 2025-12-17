@@ -2,8 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  
-  /* background-color: blueviolet; */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .app {
   display: flex;
@@ -32,6 +37,7 @@
   max-width: 100%;
   box-sizing: border-box;
   justify-content: flex-start;
+  position: absolute;
 }
 .logoMifkada {
   height: 2.8rem;
