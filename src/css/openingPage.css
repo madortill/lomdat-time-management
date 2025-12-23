@@ -42,6 +42,7 @@ transform: translate(-50%, -50%); */
     font-family: "assistant-bold";
     border-radius: 8px;
     margin-top: 1rem;
+    cursor: pointer;
 }
 
 .second-step-text {

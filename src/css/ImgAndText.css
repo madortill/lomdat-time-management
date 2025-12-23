@@ -1,4 +1,26 @@
 .nextBtnImgText {
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    cursor: pointer;
+}
+
+.textStory {
+    white-space: pre-line;
+    width: 23rem;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: right;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.9); /* חצי שקוף */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  
+    border-radius: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: "assistant";
     position: relative;
-    top: 6rem;
+    top: 24rem;
 }

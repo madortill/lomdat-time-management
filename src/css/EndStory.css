@@ -1,0 +1,34 @@
+.endStory-text {
+    font-size: 1.7rem;
+    width: 21rem;
+    background-color: white;
+    color: #804B8B;
+    font-family: 'fredoka';
+    padding: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    top: 10rem;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.endStoryBtn {
+    position: relative;
+    top: 11rem;
+    font-size: 1.5rem;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
