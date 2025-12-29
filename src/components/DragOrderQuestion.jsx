@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/Drag.css";
 
 function DragOrderQuestion({ question, onCorrect }) {
+  // הגנה – אם הנתונים עוד לא מוכנים
   if (!question || !question.answers || !question.order) {
     return null;
   }
@@ -12,17 +13,26 @@ function DragOrderQuestion({ question, onCorrect }) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const onDragStart = (item) => setDraggedItem(item);
-  const onTouchStart = (item) => setDraggedItem(item);
+  /* --- הוספת פריט (משותף לגרירה ולחיצה) --- */
+  const addItem = (item) => {
+    if (order.includes(item)) return;
+
+    setOrder((prev) => [...prev, item]);
+    setBank((prev) => prev.filter((i) => i !== item));
+  };
+
+  /* --- גרירה (דסקטופ) --- */
+  const onDragStart = (item) => {
+    setDraggedItem(item);
+  };
 
   const onDrop = () => {
     if (!draggedItem) return;
-
-    setOrder((prev) => [...prev, draggedItem]);
-    setBank((prev) => prev.filter((i) => i !== draggedItem));
+    addItem(draggedItem);
     setDraggedItem(null);
   };
 
+  /* --- איפוס במקרה של טעות --- */
   const resetGame = () => {
     setBank(question.answers);
     setOrder([]);
@@ -30,12 +40,17 @@ function DragOrderQuestion({ question, onCorrect }) {
     setError(false);
   };
 
+  /* --- בדיקת תשובה --- */
   const checkAnswer = () => {
-    const isCorrect = order.every((item, i) => item === question.order[i]);
+    const isCorrect = order.every(
+      (item, i) => item === question.order[i]
+    );
 
     if (isCorrect) {
       setSuccess(true);
-      setTimeout(onCorrect, 2000);
+      setTimeout(() => {
+        onCorrect();
+      }, 2000);
     } else {
       setError(true);
       setTimeout(resetGame, 1500);
@@ -46,6 +61,13 @@ function DragOrderQuestion({ question, onCorrect }) {
     <div className="drag-question">
       <h2>{question.question}</h2>
 
+      <p className="drag-hint">
+        בטלפון – לחצו על הפריטים לפי הסדר  
+        <br />
+        במחשב – ניתן לגרור
+      </p>
+
+      {/* Overlay הצלחה */}
       {success && (
         <div className="success-overlay">
           <div className="success-box">🎉 כל הכבוד! 🎉</div>
@@ -57,7 +79,6 @@ function DragOrderQuestion({ question, onCorrect }) {
         className="drop-area"
         onDragOver={(e) => e.preventDefault()}
         onDrop={onDrop}
-        onTouchEnd={onDrop}
       >
         {order.map((item, i) => (
           <div key={i} className="drag-item placed">
@@ -66,15 +87,15 @@ function DragOrderQuestion({ question, onCorrect }) {
         ))}
       </div>
 
-      {/* המחסן */}
+      {/* מחסן */}
       <div className="bank">
         {bank.map((item, i) => (
           <div
             key={i}
             className="drag-item"
             draggable
-            onDragStart={() => onDragStart(item)}
-            onTouchStart={() => onTouchStart(item)}
+            onDragStart={() => onDragStart(item)}   // דסקטופ
+            onClick={() => addItem(item)}           // מובייל
           >
             {item}
           </div>
@@ -88,7 +109,9 @@ function DragOrderQuestion({ question, onCorrect }) {
         בדיקה
       </button>
 
-      {error && <p className="error-text">הסדר לא נכון, מתחילים מחדש…</p>}
+      {error && (
+        <p className="error-text">הסדר לא נכון, מתחילים מחדש…</p>
+      )}
     </div>
   );
 }

@@ -1,0 +1,28 @@
+.restartBtn {
+    border: 2px solid white;
+    animation: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.3rem;
+}
+
+.EndScreen {
+    font-family: "fredoka";
+    color: #804B8B;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.end-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.end-text {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}

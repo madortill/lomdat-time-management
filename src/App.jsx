@@ -11,9 +11,11 @@ import schoolLogo from "./assets/images/schoolLogo.png";
 import data from "./data/data.json";
 import EndStory from "./components/EndStory";
 import DragOrderQuestion from "./components/DragOrderQuestion";
+import Explanation from "./components/Explanation";
+import EndScreen from "./components/EndScreen";
 
 function App() {
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(0);
   const [sectionIndex, setSectionIndex] = useState(0); // 0–5
   const [showQuestion, setShowQuestion] = useState(false);
 
@@ -62,6 +64,8 @@ function App() {
       )}
       {page === 2 && <EndStory setPage={setPage}/>}
       {page === 3 && <DragOrderQuestion question={data.drag[0]} onCorrect={() => setPage(4)}/>}
+        {page === 4 && <Explanation setPage={setPage} cards={data.flipCards}/>}
+        {page === 5 && <EndScreen setPage={setPage}/>}
       </div>
     </>
   );

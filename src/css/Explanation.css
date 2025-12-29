@@ -1,0 +1,103 @@
+.flip-page {
+    text-align: center;
+    font-family: 'fredoka';
+    color: #804B8B;
+    padding-top: 5rem;
+}
+
+.flip-instruction {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* אזור הכרטיסיות */
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+
+    width: 100%;
+    max-width: 26rem;
+    margin: 0 auto 2rem;
+
+    justify-items: center;
+}
+
+/* שני הכרטיסים העליונים */
+.cards-wrapper> :nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.cards-wrapper> :nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* הכרטיס התחתון – ממורכז */
+.cards-wrapper> :nth-child(3) {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    justify-self: center;
+}
+
+.cards-wrapper.page-0 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.cards-wrapper.page-1 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* ניווט */
+.cards-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 17rem;
+    position: relative;
+    bottom: 4rem;
+    margin-bottom: -2rem;
+}
+
+.arrow-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #804B8B;
+}
+
+.arrow-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* כפתור המשך */
+.next-page-btn {
+    background-color: #4a1953;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    animation: pulse 2.5s infinite;
+}
+
+/* אנימציית pulse */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
