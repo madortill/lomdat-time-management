@@ -10,9 +10,10 @@ import hadrahaLogo from "./assets/images/hadrahaLogo.png";
 import schoolLogo from "./assets/images/schoolLogo.png";
 import data from "./data/data.json";
 import EndStory from "./components/EndStory";
+import DragOrderQuestion from "./components/DragOrderQuestion";
 
 function App() {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(2);
   const [sectionIndex, setSectionIndex] = useState(0); // 0–5
   const [showQuestion, setShowQuestion] = useState(false);
 
@@ -60,6 +61,7 @@ function App() {
         </>
       )}
       {page === 2 && <EndStory setPage={setPage}/>}
+      {page === 3 && <DragOrderQuestion question={data.drag[0]} onCorrect={() => setPage(4)}/>}
       </div>
     </>
   );

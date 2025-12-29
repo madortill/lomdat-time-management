@@ -1,0 +1,173 @@
+/* עטיפה כללית */
+.drag-question {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'fredoka';
+    color: #804B8B;
+    padding-top: 6rem;
+}
+
+/* כותרת */
+.drag-question h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* אזור הסידור */
+.drop-area {
+    width: 22rem;
+    min-height: 14rem;
+    margin: 0 auto 2rem;
+    padding: 1.5rem;
+
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px -15px rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+/* מחסן */
+.bank {
+    width: 85%;
+    max-width: 26rem;
+    margin: 0 auto;
+
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.2rem;
+    box-shadow: 0 10px 25px -15px rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+/* פריט גרירה */
+.drag-item {
+    background-color: #804B8B;
+    color: white;
+    padding: 0.5rem 1.3rem;
+    border-radius: 25px;
+    cursor: grab;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* פריט באזור הסידור */
+.drag-item.placed {
+    background-color: #b07bbd;
+    cursor: default;
+}
+
+/* hover */
+.drag-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.6);
+}
+
+/* כפתור בדיקה */
+.drag-question button {
+    margin-top: 1.8rem;
+    font-size: 1.5rem;
+    padding: 0.7rem 2.2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    background-color: #804B8B;
+    color: white;
+    font-family: 'fredoka';
+
+    animation: pulse 2.5s infinite;
+}
+
+.drag-question button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    animation: none;
+}
+
+/* הודעת טעות */
+.error-text {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #b00020;
+}
+
+/* Overlay הצלחה */
+.success-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(128, 75, 139, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* תיבת הצלחה */
+.success-box {
+    background-color: white;
+    color: #804B8B;
+    font-size: 2.5rem;
+    padding: 3rem 3.5rem;
+    border-radius: 15px;
+    font-weight: 700;
+    box-shadow: 0 15px 30px -20px rgba(0, 0, 0, 0.6);
+
+    animation: popIn 0.5s ease;
+}
+
+/* אנימציות */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* רספונסיביות */
+@media (max-width: 600px) {
+    .drop-area {
+        width: 90%;
+    }
+
+    .bank {
+        width: 90%;
+    }
+
+    .drag-question h2 {
+        font-size: 1.6rem;
+    }
+
+    .success-box {
+        font-size: 2rem;
+        padding: 2rem;
+    }
+}

@@ -43,6 +43,21 @@ transform: translate(-50%, -50%); */
     border-radius: 8px;
     margin-top: 1rem;
     cursor: pointer;
+    animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .second-step-text {
