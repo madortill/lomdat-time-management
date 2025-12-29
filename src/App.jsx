@@ -18,6 +18,10 @@ function App() {
   const [page, setPage] = useState(0);
   const [sectionIndex, setSectionIndex] = useState(0); // 0–5
   const [showQuestion, setShowQuestion] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+  const toggleAbout = () => {
+    setShowAbout((prev) => !prev);
+  };
 
   const goNext = () => {
     // אם אנחנו בטקסט
@@ -44,6 +48,25 @@ function App() {
           <img src={hadrahaLogo} alt="hadrahaLogo" className="hadrahaLogo" />
           <img src={schoolLogo} alt="schoolLogo" className="schoolLogo" />
         </div>
+        {page === 0 && <button className="about-btn" onClick={toggleAbout}>i</button>}
+      {page === 0 && <div className={`div-about ${showAbout ? "fade-in" : "fade-out"}`}>
+        {showAbout && (
+          <>
+            <h3 className="list-text-about">מפתחות:</h3>
+            <p className="list-text-about">רב"ט גילי נחום</p>
+            <p className="list-text-about">רב"ט מאיה מרום </p>
+            <h3 className="list-text-about">גרפיקה:</h3>
+            <p className="list-text-about">רב"ט גילי נחום</p>
+            <p className="list-text-about">רב"ט מאיה מרום</p>
+            <h3 className="list-text-about">מומחי תוכן:</h3>
+            <p className="list-text-about">סמל ליהי לנצנר</p>
+            <h3 className="list-text-about">רמ"ד טי"ל:</h3>
+            <p className="list-text-about">רס"מ עדן בן חמו</p>
+            <h3 className="list-text-about">גרסה:</h3>
+            <p className="list-text-about">יולי 2025</p>
+          </>
+        )}
+      </div>}
         {page === 0 && <OpeningPage setPage={setPage} />}
         {page === 1 && (
         <>

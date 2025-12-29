@@ -4,17 +4,26 @@ import "../css/ImgAndText.css";
 import data from "../data/data.json";
 
 function ImgAndText({ index, onNext }) {
-  const text = data.texts[index].text;
+  const { text, img } = data.texts[index];
+
+  const imgSrc = new URL(
+    `../assets/images/${img}`,
+    import.meta.url
+  ).href;
+
   return (
-    <div>
+    <div className="ImgAndText">
+      <img className="textStory-img" src={imgSrc} alt="img" />
+
       <div className="textStory">
         <p className="textStory-text">{text}</p>
-      <img
-        className="nextBtnImgText"
-        src={nextBtn}
-        alt="nextBtn"
-        onClick={onNext}
-      />
+
+        <img
+          className="nextBtnImgText"
+          src={nextBtn}
+          alt="nextBtn"
+          onClick={onNext}
+        />
       </div>
     </div>
   );

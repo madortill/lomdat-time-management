@@ -14,6 +14,7 @@ function OpeningPage({setPage}) {
 
   return (
     <div className='open-screen'>
+
       <div className='openTextContainer'>
         <p className='openingTitle'>לומדת עקרונות ניהול זמן</p>
         <p className='openingSecTitle'>ששת שלבי ביצוע</p>
