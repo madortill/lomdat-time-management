@@ -76,6 +76,7 @@
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
   cursor: pointer;
+  z-index: 2;
 }
 
 .div-about {
