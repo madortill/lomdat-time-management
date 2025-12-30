@@ -59,7 +59,7 @@ function App() {
             <p className="list-text-about">רב"ט גילי נחום</p>
             <p className="list-text-about">רב"ט מאיה מרום</p>
             <h3 className="list-text-about">מומחי תוכן:</h3>
-            <p className="list-text-about">סמל ליהי לנצנר</p>
+            <p className="list-text-about">סמל מעיין קרפט</p>
             <h3 className="list-text-about">רמ"ד טי"ל:</h3>
             <p className="list-text-about">רס"מ עדן בן חמו</p>
             <h3 className="list-text-about">גרסה:</h3>
