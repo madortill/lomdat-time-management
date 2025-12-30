@@ -43,7 +43,7 @@
 @media (max-height: 750px) {
     .ImgAndText {
         margin-top: 0rem;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     .textStory {
         margin-top:-2rem;
@@ -54,7 +54,7 @@
 @media (max-width: 350px) {
     .textStory {
         width: 18rem;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     
 }
