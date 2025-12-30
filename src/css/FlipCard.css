@@ -71,7 +71,7 @@
 
 @media (max-width: 350px) {
     .flip-card {
-        width: 8.5rem;
+        width: 9rem;
         height: 13rem;
     }
     .textFront {
@@ -85,7 +85,7 @@
 }
 @media (max-height: 750px) {
     .flip-card {
-        width: 8.5rem;
+        width: 9rem;
         height: 13rem;
     }
     .textFront {
