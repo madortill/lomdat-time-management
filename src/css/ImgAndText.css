@@ -10,7 +10,7 @@
     width: 20rem;
     padding: 1.8rem;
     text-align: right;
-    font-size: 1rem;
+    font-size: 0.9rem;
     background: rgba(255, 255, 255, 0.9); /* חצי שקוף */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
