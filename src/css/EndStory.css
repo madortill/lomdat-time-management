@@ -35,3 +35,12 @@
 .endStory-bold {
     font-weight: 700;
 }
+
+
+@media (max-width: 350px) {
+    .endStory-text {
+        width: 18rem;
+        padding: 2rem;
+    }
+    
+}

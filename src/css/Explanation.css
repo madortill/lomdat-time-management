@@ -101,3 +101,16 @@
         transform: scale(1);
     }
 }
+
+@media (max-height: 800px) {
+    .next-page-btn {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.2rem;
+    }
+    .cards-navigation {
+        gap: 17rem;
+        bottom: 7rem;
+        margin-bottom: -4rem;
+    }
+    
+}

@@ -68,3 +68,40 @@
     font-size: 2rem;
     font-family: assistant;
 }
+
+@media (max-width: 350px) {
+    .flip-card {
+        width: 8.5rem;
+        height: 13rem;
+    }
+    .textFront {
+        font-size: 1.8rem;
+    }
+    .textBack {
+        padding: 3%;
+        font-size: 0.75rem;
+    }
+    
+}
+@media (max-height: 750px) {
+    .flip-card {
+        width: 8.5rem;
+        height: 13rem;
+    }
+    .textFront {
+        font-size: 1.8rem;
+    }
+    .textBack {
+        padding: 3%;
+        font-size: 0.75rem;
+    }
+}
+@media (max-height: 700px) {
+    .flip-card {
+        height: 12rem;
+    }
+    .textBack {
+        padding: 2%;
+        font-size: 0.7rem;
+    }
+}
